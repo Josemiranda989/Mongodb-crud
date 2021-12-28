@@ -1,12 +1,12 @@
 import { connect } from "mongoose";
-import { MONGODB_URI } from "./config"
+import { MONGODB_URI } from "./config";
 
-
+// connection to db
 (async () => {
   try {
     const db = await connect(MONGODB_URI);
-    console.log("Db connected to", db.connection.name);
-  } catch (err) {
-    console.error(err);
+    console.log("Db connectect to", db.connection.name);
+  } catch (error) {
+    console.error(error);
   }
 })();

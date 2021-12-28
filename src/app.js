@@ -6,6 +6,7 @@ import morgan from 'morgan'
 
 const app = express()
 
+app.set("port", process.env.PORT || 4000);
 app.set('views', path.join(__dirname + '/views'))
 const exphbs = create({  
     layoutsDir: path.join(app.get("views"), "layouts"),
@@ -13,7 +14,7 @@ const exphbs = create({
     defaultLayout: 'main',
     extname: '.hbs'
 });
-app.engine(".hbs", exphbs.engine);
+app.engine(".hbs", exphbs.engine); 
 app.set("view engine", ".hbs");
 
 // Middleware
